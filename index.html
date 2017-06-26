@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>七大罪之——测试你的犯罪指数！Seven Sins easter egg, test your crime index!</title>
+<meta property="og:image" content="data/meta.png">
+<meta property="og:description" content="七道题目，让你知道自己在人生中犯了多少条大罪！">
+<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+<link rel="icon" href="data/favicon.png" type="image/x-icon" />
+<style>
+body {
+    background: black;
+    font-family: Microsoft YaHei;
+	font-size: 10px;
+color:white;	
+}
+#myProgress {
+border-radius: 100px;
+   border: white;
+   border-style:solid;
+       margin-left: 210px;
+    margin-right: 210px;}
+#myBar {
+border-radius: 100px;
+padding: 100px;
+padding: 20px 0px;
+   border: white;
+   border-style:solid;}
+   #myProgress2 {
+border-radius: 100px;
+   border: white;
+   border-style:solid;
+       margin-left: 210px;
+    margin-right: 210px;
+	animation: mymove5 5s;
+	animation-fill-mode: forwards;
+}
+#myBar2 {
+border-radius: 100px;
+padding: 100px;
+padding: 20px 0px;
+   border: white;
+   border-style:solid;
+   	   animation: mymove4 5s;
+	   animation-fill-mode: forwards;
+ }
+ @keyframes mymove4 {
+	 0% {width:10%;}
+	 100% {width:100%;display:none;}}
+	 @keyframes mymove5 {
+	 0% {opacity:1;}
+	  99% {opacity:1;}
+	 100% {opacity:0}}
+   .move {
+	    animation: mymove1 0.5s infinite;
+	   
+	   
+	   }
+	   
+	  @keyframes mymove {
+		  0% {margin-top: 20px; opacity: 0;}
+		  100% {margin-top: -10px;opacity:1;}
+		  }
+   @keyframes mymove1 {
+    0%   {padding-left: 0px;opacity:0.3;}
+    50%   {padding-left: 10px;opacity:0.6;}
+
+    100% {padding-left: 0px;opacity:0;}
+}
+   @keyframes mymove2 {
+    0%   {opacity:0.3;}
+    50%   {opacity:1;}
+
+    100% {opacity:0.3;}}
+	@keyframes mymove3 {
+    0%   {display:block;width:0%;opacity:0;}
+75% {width:1%;opacity: 0;}
+    100% {width:100%;opacity:1;}}
+.title {
+	cursor:pointer;
+	color:white;
+	background-color: black;
+	    padding: 20px 30px;
+    margin-left: -10px;
+    margin-right: -8px;
+    display: block;
+	font-weight: bold;
+    font-size: 300%;
+    text-align: center;
+    line-height: 130%;
+display:none;
+margin-top: -30px;
+	}
+	.titlepic {
+	color:white;
+	background-color: black;
+	    padding: 20px 30px 0px;
+    margin-left: -10px;
+    margin-right: -8px;
+    margin-top: 10px;
+    display: block;
+	font-weight: bold;
+    font-size: 300%;
+    text-align: center;
+    line-height: 130%;
+	animation: mymove2 5s ;
+	}
+sm {
+	font-size: 5px;
+	}
+big {
+	font-size: xx-large;
+	}
+small {
+	font-size: larger;
+	}
+input[type="radio"] {
+     cursor:pointer;
+display:none;
+}
+label {
+    cursor: pointer;
+    line-height: 30px;
+    padding: 5px 0px;
+    margin: auto;
+    width: 40%;
+    border-width: 1px;
+    display: block;
+    text-align: center;
+    border-radius: 30px;
+    border-color: white;
+    margin-top: -20px;
+    font-size: 18px;
+	border-style:solid;
+	}
+	label:hover {
+		background-color: #ffffff;
+		color: black;
+		transition-duration: 0.2s;
+	
+		}
+span {
+	font-weight:bold;
+	}
+.header {
+    padding: 20px 20px;
+    background: black;
+    margin-left: -10px;
+    margin-right: -8px;
+    margin-top: -10px;
+    display: block;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+    text-align: center;
+    line-height: 130%;
+	 animation: mymove 2s ;
+"	
+	}
+.question {
+display:none;
+padding: 10px 30px;
+padding: 1px 50px;
+    margin: auto;
+    width: 60%;
+font-size: 200%;
+    text-align: center;
+    margin-top: -10px;
+}
+}
+.check {
+display:none;
+}
+.result {
+
+font-size:100;
+text-align:center;
+animation: mymove3 5.0s;
+
+}
+</style>
+<script>
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 1;
+  var id = setInterval(frame, 50);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+	  document.getElementById("myProgress").style.display = "none";
+	  	  document.getElementById("title").style.display = "block";
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+
+function check() {
+var q1 = document.juec.q1.value;
+var q2 = document.juec.q2.value;
+var q3 = document.juec.q3.value;
+var q4 = document.juec.q4.value;
+var q5 = document.juec.q5.value;
+var q6 = document.juec.q6.value;
+var q7 = document.juec.q7.value;
+
+
+document.getElementById("q7").style.display = "none";
+document.getElementById("myProgress2").style.display = "block";
+document.getElementById("result").style.display = "block";
+console.log(q1,q2,q3,q4,q5,q6,q7)   
+var num = parseFloat(q1) + parseFloat(q2) + parseFloat(q3)+ parseFloat(q4)+ parseFloat(q5)+ parseFloat(q6)+ parseFloat(q7);
+
+if(num < 80) {
+	document.getElementById("result").innerHTML = "<img class='result' src='data/"+ num + ".jpg' width='1000px'/>" ;
+	document.getElementById("repic").style.display = "block";
+}
+if(num >= 80) {
+	document.getElementById("result").innerHTML = "<img class='result' src='data/80.jpg'  width='1000px'/>" ;
+	document.getElementById("repic").style.display = "block";
+}	}
+function myFunction() {
+document.getElementById("intro").style.display = "none";
+
+document.getElementById("title").style.display = "none";
+document.getElementById("titlepic").style.display = "none";
+document.getElementById("q1").style.display = "block";
+}
+function myFunction1() {
+document.getElementById("q1").style.display = "none";
+document.getElementById("q2").style.display = "block";
+}
+function myFunction2() {
+document.getElementById("q2").style.display = "none";
+document.getElementById("q3").style.display = "block";
+}
+function myFunction3() {
+document.getElementById("q3").style.display = "none";
+document.getElementById("q4").style.display = "block";
+}
+function myFunction4() {
+document.getElementById("q4").style.display = "none";
+document.getElementById("q5").style.display = "block";
+}
+function myFunction5() {
+document.getElementById("q5").style.display = "none";
+document.getElementById("q6").style.display = "block";
+}
+
+function myFunction6() {
+document.getElementById("q6").style.display = "none";
+document.getElementById("q7").style.display = "block";
+}
+
+</script>
+</head>
+<body onload="move()">
+<div id="player">
+    <audio controls autoplay hidden>
+     <source src="data/background.mp3" type="audio/mpeg">
+    
+    </audio>
+</div>
+<div class="header"><img alt="logo.png" src ="data/logo.png" width="300px;"/></div>
+<div id="myProgress">
+  <div id="myBar"></div>
+  
+</div><br>
+<div class="title" id="title"  onclick="myFunction()"><b>七大罪，你犯了几项？&nbsp;</b><span style="
+    
+"><img src="data/arrow.png" width="60px;" class="move"></span></div>
+<div class="titlepic" id="titlepic"><img alt="logo.png" src ="data/share.jpg" width="1000px;"/></div>
+
+<form method="post" class="juec" id="juec" name="juec" onsubmit="return false">
+<div class="intro" id="intro" style="text-align: center;">
+<br>
+
+
+
+</div>
+<div class="question" id="q1" >
+<span >对你而言，只要能吃的都是食物</span><br><br><br>
+
+<input type=radio id="1" name="q1" value=0 onclick="myFunction1()"><label for="1">当然啦</label><br>
+<input type=radio id="2" name="q1" value=4 onclick="myFunction1()"><label for="2">不要太难吃就行</label><br>
+<input type=radio id="3" name="q1" value=8 onclick="myFunction1()"><label for="3">至少要合我口味</label><br>
+<input type=radio id="4" name="q1" value=16 onclick="myFunction1()"><label for="4">不，一定是要上等佳肴</label><br>
+</div>
+<div class="question" id="q2">
+<span> 一个星期内能骂多少次脏话</span><br><br><br>
+<input type=radio id="5" name="q2" value=0 onclick="myFunction2()"><label for="5">我从来不骂脏话</label><br>
+<input type=radio id="6" name="q2" value=8 onclick="myFunction2()"><label for="6">我不骂脏话，只是气在心里</label><br>
+<input type=radio id="7" name="q2" value=4 onclick="myFunction2()"><label for="7">不多，通常是朋<br>友之间的玩笑</label><br>
+<input type=radio id="8" name="q2" value=16 onclick="myFunction2()"><label for="8">多到数不清，总是遭遇不顺</label><br>
+</div>
+<div class="question" id="q3">
+<span>路上碰到乞丐。。。</span><br><br><br>
+<input type=radio id="10" name="q3" value=0 onclick="myFunction3()"><label for="10">马上掏钱给他</label><br>
+<input type=radio id="11" name="q3" value=4 onclick="myFunction3()"><label for="11">不给他们钱，但给予同情</label><br>
+<input type=radio id="12" name="q3" value=8 onclick="myFunction3()"><label for="12">怕是坏人，赶快给他钱，<br>快步离开/钱也不给就走</label><br>
+<input type=radio id="13" name="q3" value=16 onclick="myFunction3()"><label for="13">一定很脏，不敢碰也不敢闻</label><br>
+</div>
+<div class="question" id="q4">
+<span>工作表现</span><br><br><br>
+<input type=radio id="14" name="q4" value=16 onclick="myFunction4()"><label for="14">经常迟到</label><br>
+<input type=radio id="15" name="q4" value=16 onclick="myFunction4()"><label for="15">爱把工作丢个别人</label><br>
+<input type=radio id="16" name="q4" value=0 onclick="myFunction4()"><label for="16">工作要亲力亲为才有安全感</label><br>
+<input type=radio id="17" name="q4" value=0 onclick="myFunction4()"><label for="17">每次都帮同事处理做不完的事
+</label><br>
+</div>
+<div class="question" id="q5">
+<span>是否看过成人片？</span><br><br><br>
+<input type=radio id="18" name="q5" value=0 onclick="myFunction5()"><label for="18">不看的</label><br>
+<input type=radio id="19" name="q5" value=4 onclick="myFunction5()"><label for="19">有必要的时候</label><br>
+<input type=radio id="20" name="q5" value=8 onclick="myFunction5()"><label for="20">心情不好的时候</label><br>
+<input type=radio id="21" name="q5" value=16 onclick="myFunction5()"><label for="21">经常看</label><br>
+</div>
+<div class="question" id="q6">
+<span>你的经济能力</span><br><br><br>
+<input type=radio id="22" name="q6" value=16 onclick="myFunction6()"><label for="22">很富有，不过还不满足</label><br>
+<input type=radio id="23" name="q6" value=0 onclick="myFunction6()"><label for="23">无论如何，反正<br>对我来说，很足够了</label><br>
+<input type=radio id="24" name="q6" value=4 onclick="myFunction6()"><label for="24">老是觉得薪水太少，很<br>难应付生活</label><br>
+<input type=radio id="25" name="q6" value=8 onclick="myFunction6()"><label for="25">曾想透过不良手段来获取金钱</label><br>
+</div>
+<div class="question" id="q7">
+<span>老是看见那些网红。。。</span><br><br><br>
+<input type=radio id="26" name="q7" value=4 onclick="check()"><label for="26">觉得他们自不量力</label><br>
+<input type=radio id="27" name="q7" value=16 onclick="check()"><label for="27">为什么他们那么容易就<br>能得到那么多粉丝</label><br>
+<input type=radio id="28" name="q7" value=0 onclick="check()"><label for="28">反正我能过我的生活就好</label><br>
+<input type=radio id="29" name="q7" value=8 onclick="check()"><label for="29">有什么好羡慕的，我也是网红</label><br>
+</div>
+
+</form>
+<span class="result" id="result" >
+
+</span>
+<div id="myProgress2" style="display:none;">
+  <div id="myBar2"></div>
+  </div>
+<div class="titlepic" id="repic" style="display:none;"><img alt="logo.png" src ="data/share.jpg" width="1000px;"/></div>
+
+<br>
+<span id="share"></span>
+</body>
+</html>
